@@ -2,45 +2,23 @@ import React, { useEffect, useState } from "react";
 import CtaButton from "./CtaButton";
 import img from "../img/about-img.svg";
 import { BsPeople } from "react-icons/bs";
+import { BsLightbulb } from "react-icons/bs";
 
 // aos
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-
 
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-    });
-  });
-
-  const [show, setShow] = useState(false);
-
-  const videoStartHandler = () => {
-    const video = document.querySelector("#video");
-    video.currentTime = 0;
-    video.load();
-    setShow(true);
-  };
-
-  const clickHandler = () => {
-    const video = document.querySelector("#video");
-    video.pause();
-    setShow(false);
-  };
+  
 
   return (
     <div className="relative lg:mx-32">
       <h1
         data-aos="fade-down"
-        className="text-3xl font-semibold text-center text-[#7A6960]"
+        className="primary-font text-3xl font-semibold text-center text-[#7A6960]"
       >
         About Me
       </h1>
       <div className="flex justify-center items-center mt-2 mb-10">
-       <div className="h-1 w-16 rounded" style={{backgroundColor: '#8e1616'}}></div>
+       <div className="h-1 w-16 rounded" style={{backgroundColor: '#C86B4A'}}></div>
       </div>
 
       <div className="flex flex-col lg:flex-row items-center lg:gap-10 secondary-font">
@@ -52,12 +30,13 @@ const About = () => {
         </div>
         <div className="lg:w-1/2 w-full md:w-3/4 px-10 md:p-0">
           <div data-aos="fade-left">
-            <h1 className="text-[#7A6960] md:text-3xl font-semibold">
-              Passionate
+            <h1 className="primary-font text-[#7A6960] md:text-3xl font-semibold">
+              Founder
             </h1>
             <p className="text-lg mt-5 text-gray-600 primary-font">
-             With a passion for helping small businesses grow, I am a freelance digital marketer specializing in strategies that drive real results.
-            From crafting compelling campaigns to optimizing for conversions, every solution is tailored to meet the unique needs of each client.
+             Tanya Kabote is a digital marketing strategist with experience across paid media, influencer marketing, social media strategy and campaign management.
+Having worked with global brands and emerging businesses alike, she founded TS Media Collective to help brands leverage modern marketing and AI-powered systems to achieve sustainable growth.
+
             </p>
           </div>
 
@@ -67,7 +46,7 @@ const About = () => {
             className="flex flex-col lg:flex-row justify-center items-center gap-5 mt-5"
           >
             <div
-              className="w-fit p-2 md:p-5 rounded" style={{backgroundColor: '#8e1616', color: "white"}}
+              className="w-fit p-2 md:p-5 rounded" style={{backgroundColor: '#C86B4A', color: "white"}}
             >
               <BsPeople size={"28px"} />
             </div>
@@ -87,9 +66,9 @@ const About = () => {
             data-aos="zoom-in"
             className="flex flex-col lg:flex-row justify-center items-center gap-5 mt-5"
           >
-            <div className="w-fit p-2 md:p-5 rounded" style={{backgroundColor: '#8e1616', color: "white"}}
+            <div className="w-fit p-2 md:p-5 rounded" style={{backgroundColor: '#C86B4A', color: "white"}}
             >
-              <BsPeople size={"28px"} />
+              <BsLightbulb  size={"28px"} />
             </div>
             <div className="w-full">
               <h2 className="text-[#7A6960] text-xl font-medium">

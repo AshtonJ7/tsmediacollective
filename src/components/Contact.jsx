@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
 const Contact = () => {
-  const { register, handleSubmit } = useForm();
+ const { register, handleSubmit } = useForm();
 
   const onSubmit = (data, e) => {
     console.log(data);
@@ -31,18 +31,18 @@ const Contact = () => {
         Contact
       </h1>
       <div className="flex justify-center items-center mt-2">
-   <div className="h-1 w-16 rounded" style={{backgroundColor: '#8e1616'}}></div>
+        <div className="h-1 w-16 rounded" style={{ backgroundColor: '#8e1616' }}></div>
       </div>
       <p className="text-gray-700 text-center mt-7 mb-10 text-lg">
-     <strong> Let's talk about how we can grow your business.</strong> <br></br>
-Reach out today and get a personalized digital marketing plan that fits your goals.
+        <strong> Let's talk about how we can grow your business.</strong> <br></br>
+        Reach out today and get a personalized digital marketing plan that fits your goals.
       </p>
 
       <div className="lg:flex gap-6">
         {/* map */}
         <div
           data-aos="fade-up"
-          className="lg:w-[40%] px-10 py-5 shadow-xl border-t-[3px] border-b-[3px] mb-7 lg:mb-0" style={{borderTopColor: '#8e1616', borderBottomColor: '#8e1616'}}
+          className="lg:w-[40%] px-10 py-5 shadow-xl border-t-[3px] border-b-[3px] mb-7 lg:mb-0" style={{ borderTopColor: '#8e1616', borderBottomColor: '#8e1616' }}
         >
 
           <div className="flex gap-5 mb-12">
@@ -123,6 +123,34 @@ Reach out today and get a personalized digital marketing plan that fits your goa
 
               <div className="md:w-[50%]">
                 <div>
+                  <label htmlFor="company">Company</label>
+                  <input
+                    {...register("company")}
+                    type="text"
+                    id="company"
+                    placeholder="Your Company Ltd."
+                    className="w-full h-10 px-3 my-3 rounded border border-zinc-300 focus:border focus:border-yellow-800 outline-none"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="md:flex gap-6">
+              <div className="md:w-[50%]">
+                <div>
+                  <label htmlFor="website">Website</label>
+                  <input
+                    {...register("website")}
+                    type="url"
+                    id="website"
+                    placeholder="https://yourwebsite.com"
+                    className="w-full h-10 px-3 my-3 rounded border border-zinc-300 focus:border focus:border-yellow-800 outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="md:w-[50%]">
+                <div>
                   <label htmlFor="email">Your Email</label>
                   <input
                     {...register("email", { required: true })}
@@ -135,15 +163,42 @@ Reach out today and get a personalized digital marketing plan that fits your goa
               </div>
             </div>
 
-            <div>
-              <label htmlFor="subject">Subject</label>
-              <input
-                {...register("subject", { required: true })}
-                type="text"
-                id="subject"
-                placeholder="Your subject"
-                className="w-full h-10 px-3 my-3 rounded border border-zinc-300 focus:border focus:border-yellow-800 outline-none"
-              />
+            <div className="md:flex gap-6">
+              <div className="md:w-[50%]">
+                <div>
+                  <label htmlFor="phone">Phone</label>
+                  <input
+                    {...register("phone")}
+                    type="tel"
+                    id="phone"
+                    placeholder="+1 (555) 000-0000"
+                    className="w-full h-10 px-3 my-3 rounded border border-zinc-300 focus:border focus:border-yellow-800 outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="md:w-[50%]">
+                <div>
+                  <label htmlFor="service">Service Required</label>
+                  <select
+                    {...register("service", { required: true })}
+                    id="service"
+                    defaultValue=""
+                    className="w-full h-10 px-3 my-3 rounded border border-zinc-300 focus:border focus:border-yellow-800 outline-none bg-white"
+                  >
+                    <option value="" disabled>
+                      Select a service
+                    </option>
+                    <option value="SEO">SEO</option>
+                    <option value="Social Media Marketing">Social Media Marketing</option>
+                    <option value="Content Marketing">Content Marketing</option>
+                    <option value="Paid Advertising">Paid Advertising</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Branding">Branding</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div>
@@ -165,5 +220,4 @@ Reach out today and get a personalized digital marketing plan that fits your goa
     </div>
   );
 };
-
 export default Contact;

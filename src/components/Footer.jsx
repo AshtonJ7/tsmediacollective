@@ -32,14 +32,9 @@ const Footer = () => {
         <ul>
           <li>
             <a href="#" className="text-zinc-700">
-              Terms Of Service
+              
             </a>
                  </li>
-            <li>
-              <Link to="/hireus" className="text-zinc-700">
-          Hire Us
-            </Link>
-            </li>
         </ul>
       </div>
 

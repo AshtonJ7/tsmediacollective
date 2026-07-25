@@ -8,19 +8,17 @@ import Seo from "../src/services/Seo";
 import Campaign from "../src/services/Campaign";
 import Influencer from "../src/services/InfluencerMarketing";
 
-import Hireus from "../src/services/Hireus";
 
 const Routings = () => {
   return (
     <div>
       <Routes>
-        <Route path="/tanyakabote/" element={<Home />} />
+        <Route path="/tsmediacollective/" element={<Home />} />
         <Route path="social-marketing" element={<SocialMedia />} />
         <Route path="/PPC" element={<PPC />} />
         <Route path="/seo-optimization" element={<Seo />} />
         <Route path="/campagin-creation" element={<Campaign />} />
          <Route path="/influencer-marketing" element={<Influencer />} />
-        <Route path="/hireus" element={<Hireus />} />
       </Routes>
     </div>
   );

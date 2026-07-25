@@ -1,85 +1,79 @@
 import React, { useEffect } from "react";
 import Card from "./Card";
 import { HiOutlineChartPie } from "react-icons/hi2";
+import { RiAdvertisementLine } from "react-icons/ri";
+import { IoIosPeople } from "react-icons/io";
+import { MdOutlineCampaign } from "react-icons/md";
+import { RiSeoLine } from "react-icons/ri";
+
 
 // aos
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    AOS.init();
-  });
 
   // const clickHandler = () => {
   //   navigate("social-marketing");
   // };
   return (
     <div className="text-[#7A6960]">
-      <h1 data-aos="fade-down" className="text-3xl font-semibold text-center">
+      <h1 data-aos="fade-down" className="primary-font text-3xl font-semibold text-center">
         Services
       </h1>
       <div className="flex justify-center items-center mt-2">
        <div className="h-1 w-16 rounded" style={{backgroundColor: '#8e1616'}}></div>
       </div>
-      <p className="text-gray-700 text-center mt-7 mb-10 text-lg">
+      <p className="text-gray-700 text-center mt-7 mb-10 text-lg secondary-font">
         Whether you're starting from scratch or looking to fine-tune your existing marketing, I offer tailored services designed to meet your business where it’s at and take it further.
       </p>
       <div
-        className="flex flex-col lg:flex-row items-center gap-5"
+        className="flex flex-col lg:flex-row items-stretch gap-5"
         data-aos="fade-up"
       >
-        <div onClick={() => navigate("/social-marketing")}>
-          <Card
-            img={<HiOutlineChartPie />}
-            title={"Social Media Marketing"}
-            desc={
-              "Utilizing social media platforms to build brand awareness, engage with customers, and drive traffic to a website"
-            }
-          />
-        </div>
+                <div onClick={() => navigate("")}>
+         <Card
+    img={<RiAdvertisementLine  />}
+    title={"Paid Media Advertising"}
+    desc={["Meta Ads", " TikTok Ads", "LinkedIn Ads", "LinkedIn Ads", "Google Ads"]}
+  />
+      </div>
 
-        <div onClick={() => navigate("/PPC")}>
+         <div onClick={() => navigate("")}>
           <Card
-            img={<HiOutlineChartPie />}
-            title={"Pay-Per-Click (PPC) Advertising"}
-            desc={
-              "Running targeted online ads, typically on search engines or social media platforms, where advertisers pay only when their ad is clicked."
-            }
-          />
-        </div>
-
-        <div onClick={() => navigate("/seo-optimization")}>
-          <Card
-            img={<HiOutlineChartPie />}
-            title={"Search Engine Optimization"}
-            desc={
-              "Utilizing social media platforms to build brand awareness, engage with customers, and drive traffic to a website."
-            }
-          />
-        </div>
-
-        <div onClick={() => navigate("/campagin-creation")}>
-          <Card
-            img={<HiOutlineChartPie />}
-            title={"Campaign Creation"}
-            desc={
-              "Creating a bespoke strategic plan for promoting your business. With the goal to boost brand awareness, engagement and conversions with your target audience."
-            }
-          />
-        </div>
-         <div onClick={() => navigate("/influencer-marketing")}>
-          <Card
-            img={<HiOutlineChartPie />}
+            img={<IoIosPeople  />}
             title={"Influencer Marketing"}
-            desc={
-              "Collaborating with individuals who have a large and engaged following on social media to promote a brand or product. "
-            }
+            desc={["Creator Partnerships", " TikTok Ads", "UGC Campaigns", "Influencer Strategy"]}
           />
         </div>
+
+        <div onClick={() => navigate("")}>
+          <Card
+            img={<HiOutlineChartPie />}
+            title={"Social Media Strategy"}
+             desc={["Content Planning", "Community Growth", "Reporting & Analytics"]}
+
+          />
+        </div>
+        <div onClick={() => navigate("")}>
+          <Card
+            img={<MdOutlineCampaign  />}
+            title={"AI Automation"}
+            desc={["AI Chatbots", "WhatsApp Automation", "Lead Generation Systems", "Email Automation"]}
+          />
+        </div>
+        
+
+     <div onClick={() => navigate("")}>
+          <Card
+            img={<RiSeoLine  />}
+            title={"Training & Capacity Building"}
+           desc={["Digital Marketing Training", "AI Skills Workshops", "Graduate Marketing Programmes"]}
+          />
+        </div>
+
       </div>
     </div>
   );

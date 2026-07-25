@@ -8,7 +8,7 @@ const Template = ({ title, desc, image }) => {
   return (
     <>
       <div className="secondary-font bg-red-900">
-        <div className="md:py-14 lg:px-32 border-b border-orange-100">
+        <div className="md:py-14 lg:px-32">
           <div className="flex flex-col md:flex-row gap-10 justify-center bg-[#FEFAF8] items-center md:border md:shadow-xl rounded overflow-hidden md:p-16 p-10">
             {/* Content */}
             <div className="w-full md:w-1/2">
