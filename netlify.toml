@@ -4,6 +4,6 @@
   publish = "dist"
 
 [[redirects]]
-  from = "./api/*"
+  from = "./app/*"
   to = "/index.html"
   status = 200
