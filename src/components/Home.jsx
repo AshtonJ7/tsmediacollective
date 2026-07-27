@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,16 +15,28 @@ import Newsletter from './Newsletter'
 import Footer from './Footer'
 
 const Home = () => {
+  const { hash } = useLocation();
+
   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
 
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        // small timeout lets the page finish rendering before scrolling
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 100);
+      }
+    }
+  }, [hash]);
+
   return (
     <div className="container min-w-full min-h-lvh secondary-font">
       <NavBar />
-      <section className="w-full max-h-fit pt-16 lg:px-32 overflow-hidden bg-[#F5EDE4] border-b">
-        <Hero />
-      </section>
+      <section id="hero" className="w-full max-h-fit pt-16 lg:px-32 overflow-hidden bg-[#F5EDE4] border-b">
+      <Hero />
+    </section>
             <section id="services" className="w-full max-h-fit py-16 lg:px-32 overflow-hidden bg-[#F5EDE4] border-b border-yellow-800">
         <Services />
       </section>

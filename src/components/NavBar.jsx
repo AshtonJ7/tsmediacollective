@@ -4,13 +4,14 @@ import { IoChevronDown, IoClose } from "react-icons/io5";
 import CtaButton from "./CtaButton";
 import { Link, useLocation } from "react-router-dom";
 import img from "../img/favicon.png";
+import About from './About'
 
 const NAV_LINKS = [
-  { name: "Home", to: "/" },
-  { name: "About", to: "/about" },
-  { name: "Services", to: "/services" },
-  { name: "Portfolio", to: "/portfolio" },
-  { name: "Contact", to: "/contact" },
+  { name: "Home", to: "/#hero" },
+ { name: "Services", to: "/#services" },
+  { name: "About", to: "/#about" },
+  { name: "Latest Offer", to: "/#portfolio" },
+  { name: "Contact", to: "/#contact" },
 ];
 
 const BLOG_LINKS = [
@@ -59,7 +60,7 @@ const NavBar = () => {
   return (
     <nav
       aria-label="Main navigation"
-      className="w-full xl:h-20 lg:h-18 h-14 flex flex-row items-center justify-between lg:px-32 sm:px-20 px-10 shadow-lg relative secondary-font"
+      className="w-full xl:h-16 lg:h-18 h-14 flex flex-row items-center justify-between lg:px-32 sm:px-20 px-10 shadow-lg relative secondary-font lg:sticky lg:top-0 lg:z-50 bg-white"
     >
       {/* logo */}
       <Link to="/" className="flex items-center gap-2">
